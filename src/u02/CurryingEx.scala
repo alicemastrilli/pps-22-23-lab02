@@ -25,4 +25,18 @@ object CurryingEx extends App {
   println(p3(4, 3, true)) //false
   println(p4(4)(5)(true)) //true
   println(p4(4)(3)(true)) //false
+
+
+  // Ex.5
+  def compose(f: Int => Int, g:Int => Int) : Int => Int =
+    x => f(g(x))
+
+  println(compose(_ -1, _ *2) (5))
+
+  def genericCompose[A,B, C](f: B=> C, g: A=> B): A=>C =
+    x => f(g(x))
+  val f : Integer => Boolean = _ >= 10
+  val g : Integer => Integer = _ +9
+  println(genericCompose(f, g) (1)) //true
+
 }
