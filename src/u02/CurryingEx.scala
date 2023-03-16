@@ -39,4 +39,31 @@ object CurryingEx extends App {
   val g : Integer => Integer = _ +9
   println(genericCompose(f, g) (1)) //true
 
+  // Ex-6
+  // 12,8 -> 8,4 -> 4,0
+  // 12,3 -> 3, 0
+  def gcd(a: Int, b:Int ) : Int = b match
+    case b if b==0 || a<b => a
+    case _ => gcd(b, a%b)
+
+
+  println(gcd(12,8))
+  println(gcd(14,7))
+  println(gcd(10,7))
+
+  //tail-recursive
+  def gcd2(a: Int, b:Int ) : Int =
+    @annotation.tailrec // checks only if optimisation is possible
+    def _gcd(a: Int, b: Int): Int = b match
+      case b if b == 0 || a < b => a
+      case _ => _gcd(b, a % b)
+    _gcd(a, b)
+
+  println(gcd2(12, 8))
+  println(gcd2(14, 7))
+  println(gcd2(10,7))
+
+  //es.7
+
+
 }
