@@ -1,14 +1,16 @@
 package u02
 
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 import BTrees.Tree.*
+import org.junit.jupiter.api.Test
+
 
 class BTreesTest:
 
   val tree = Branch(Branch(Leaf(1), Leaf(2)), Leaf(1))
 
-  @Test def testCount() =
+  @Test
+  def testCount() =
     assertEquals(2, count(tree, 1))
     assertEquals(1, count(tree, 2))
     assertEquals(0, count(tree, 3))
@@ -19,3 +21,4 @@ class BTreesTest:
   @Test def testFind() =
     assertTrue(find(tree, 2))
     assertFalse(find(tree, 4))
+
