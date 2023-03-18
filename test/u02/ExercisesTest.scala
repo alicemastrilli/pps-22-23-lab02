@@ -2,22 +2,22 @@ package u02
 
 import org.junit.jupiter.api.Assertions.{assertEquals, assertFalse, assertTrue}
 import org.junit.jupiter.api.Test
-import u02.CurryingEx.Point
-import u02.CurryingEx.Shape.*
+import u02.Exercises.Point2D
+import u02.Exercises.Shape.*
 import u02.Tuples.Tup4
 
 
 class ExerciseTest:
-  val rect1 = Rectangle(Tup4(Point(-1.0, 3.0),Point(2.0, 3.0),Point(2.0, -3.0),Point(-1.0, -3.0)))
-  val rect2=  Rectangle(Tup4(Point(-3.0, 1.0),Point(3.0, 1.0),Point(3.0, -1.0),Point(-3.0, -1.0)))
-  val circle1 = Circle(2, Point(6.0, 0.0))
-  val circle2 = Circle(3, Point(4.0, 6.0))
-  val square1 = Square(Tup4(Point(-2.0, 4.0), Point(4.0, 4.0), Point(4.0, -2.0), Point(-2.0, -2.0)))
-  val square2 = Square(Tup4(Point(3.0, -1.0), Point(6.0, -1.0), Point(6.0, 2.0), Point(3.0, 2.0)))
-  val point1 = Point(3.5, 3.5)
-  val point2 = Point(-2.0, 0.0)
-  val point3 = Point(4.0, 0.0)
-  val point4 = Point(1.0, 1.0)
+  val rect1 = Rectangle(Tup4(Point2D(-1.0, 3.0),Point2D(2.0, 3.0),Point2D(2.0, -3.0),Point2D(-1.0, -3.0)))
+  val rect2=  Rectangle(Tup4(Point2D(-3.0, 1.0),Point2D(3.0, 1.0),Point2D(3.0, -1.0),Point2D(-3.0, -1.0)))
+  val circle1 = Circle(2, Point2D(6.0, 0.0))
+  val circle2 = Circle(3, Point2D(4.0, 6.0))
+  val square1 = Square(Tup4(Point2D(-2.0, 4.0), Point2D(4.0, 4.0), Point2D(4.0, -2.0), Point2D(-2.0, -2.0)))
+  val square2 = Square(Tup4(Point2D(3.0, -1.0), Point2D(6.0, -1.0), Point2D(6.0, 2.0), Point2D(3.0, 2.0)))
+  val point1 = Point2D(3.5, 3.5)
+  val point2 = Point2D(-2.0, 0.0)
+  val point3 = Point2D(4.0, 0.0)
+  val point4 = Point2D(1.0, 1.0)
   @Test def testPerimeter() =
     assertEquals(18, perimeter(rect1))
     assertEquals(16, perimeter(rect2))
